@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.1 on win32)" generated="20220608 18:30:55.274" rpa="false" schemaversion="2">
+<suite id="s1" name="Docentes" source="C:\Users\carol\Desktop\Carol\USP-Automation\Tests\Docentes.robot">
+<kw name="Inicio do Teste" library="Resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blanc</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220608 18:30:56.177" level="INFO">Opening browser 'Chrome' to base url 'about:blanc'.</msg>
+<status status="PASS" starttime="20220608 18:30:56.177" endtime="20220608 18:30:58.328"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220608 18:30:58.328" endtime="20220608 18:30:58.472"/>
+</kw>
+<status status="PASS" starttime="20220608 18:30:56.177" endtime="20220608 18:30:58.472"/>
+</kw>
+<test id="s1-t1" name="Cenario 1: numero de professores no departamento de CC">
+<kw name="Dado que estou na base de professores" library="Docentes">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220608 18:30:58.481" level="INFO">Opening url 'https://www.icmc.usp.br/pessoas/docentes'</msg>
+<status status="PASS" starttime="20220608 18:30:58.481" endtime="20220608 18:31:05.980"/>
+</kw>
+<status status="PASS" starttime="20220608 18:30:58.480" endtime="20220608 18:31:05.980"/>
+</kw>
+<kw name="Quando pesquiso pelos docentes de ciencia de computacao" library="Docentes">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Departamentos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 18:31:05.988" level="INFO">Clicking element 'css=span.Cestsgl &gt; select'.</msg>
+<status status="PASS" starttime="20220608 18:31:05.980" endtime="20220608 18:31:06.260"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Ciencia_Comp}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 18:31:06.260" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[1]/div[2]/div[3]/form/span[1]/select/option[2]'.</msg>
+<status status="PASS" starttime="20220608 18:31:06.260" endtime="20220608 18:31:06.324"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220608 18:31:11.327" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220608 18:31:06.324" endtime="20220608 18:31:11.327"/>
+</kw>
+<status status="PASS" starttime="20220608 18:31:05.980" endtime="20220608 18:31:11.327"/>
+</kw>
+<kw name="Entao numero de professores e exibido" library="Docentes">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${cnt}</var>
+<arg>${Docentes}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220608 18:31:11.351" level="INFO">${cnt} = 24</msg>
+<status status="PASS" starttime="20220608 18:31:11.327" endtime="20220608 18:31:11.351"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${cnt}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220608 18:31:11.351" endtime="20220608 18:31:11.351"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${cnt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220608 18:31:11.351" endtime="20220608 18:31:11.359"/>
+</kw>
+<status status="PASS" starttime="20220608 18:31:11.327" endtime="20220608 18:31:11.359"/>
+</kw>
+<status status="PASS" starttime="20220608 18:30:58.472" endtime="20220608 18:31:11.359"/>
+</test>
+<kw name="Final do Teste" library="Resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220608 18:31:11.367" endtime="20220608 18:31:13.759"/>
+</kw>
+<status status="PASS" starttime="20220608 18:31:11.359" endtime="20220608 18:31:13.759"/>
+</kw>
+<status status="PASS" starttime="20220608 18:30:55.274" endtime="20220608 18:31:13.759"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Docentes">Docentes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
