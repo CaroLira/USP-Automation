@@ -20,5 +20,5 @@ Quando pesquiso pelos docentes de ciencia de computacao
 
 Entao numero de professores e exibido
     ${cnt}=    Get Element Count        ${Docentes}
-    Should Be True	                    ${cnt}     
+    Should Be True                      ${cnt}   
     Log To Console                      ${cnt}
