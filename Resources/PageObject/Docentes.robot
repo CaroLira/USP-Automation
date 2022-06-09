@@ -19,6 +19,6 @@ Quando pesquiso pelos docentes de ciencia de computacao
     Sleep                               5
 
 Entao numero de professores e exibido
-    ${cnt}=    Get Element Count    ${Docentes}
-    Should Be True	                ${cnt}     
-    Log To Console                  ${cnt}
+    ${cnt}=    Get Element Count        ${Docentes}
+    Should Be True	                    ${cnt}     
+    Log To Console                      ${cnt}
